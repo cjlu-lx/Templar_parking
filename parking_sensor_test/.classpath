@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry excluding="src/" kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/com.cdtemplar.parking_sensor">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="com.cdtemplar.parking_sensor"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/lx/workspace2/com.cdtemplar.parking_sensor/src/com/cdtemplar/lib/org.jboss.netty_3.2.5.Final-20130531-2315.jar"/>
+	<classpathentry kind="lib" path="C:/Users/lx/workspace2/com.cdtemplar.parking_sensor/src/com/cdtemplar/lib/netty-all-5.0.0.Alpha1.jar"/>
+	<classpathentry kind="lib" path="D:/Work/Git/parking/com.cdtemplar.parking_sensor/bin/com/cdtemplar/lib/gson-2.2.4.jar"/>
+	<classpathentry kind="lib" path="D:/Work/Git/parking/com.cdtemplar.parking_sensor/bin/com/cdtemplar/lib/netty-all-5.0.0.Alpha1.jar"/>
+	<classpathentry kind="lib" path="D:/Work/Git/parking/com.cdtemplar.parking_sensor/bin/com/cdtemplar/lib/org.jboss.netty_3.2.5.Final-20130531-2315.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
