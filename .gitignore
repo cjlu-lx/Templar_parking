@@ -1,5 +1,7 @@
-*.zip
-*.rar
-*.via
-*.tmp
-*.err
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
