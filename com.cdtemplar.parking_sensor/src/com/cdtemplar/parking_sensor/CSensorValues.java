@@ -28,24 +28,24 @@ public class CSensorValues {
 		return "TB" + ID;
 	}
 
-	public int X0;// ´Å³¡X³õÖµ
-	public int Y0;// ´Å³¡Y³õÖµ
-	public int Z0;// ´Å³¡Z³õÖµ
-	public int BusyRate = 0; // ÓĞ³µ¸ÅÂÊ Ç§·Ö±È
+	public int X0;// ç£åœºXåˆå€¼
+	public int Y0;// ç£åœºYåˆå€¼
+	public int Z0;// ç£åœºZåˆå€¼
+	public int BusyRate = 0; // æœ‰è½¦æ¦‚ç‡ åƒåˆ†æ¯”
 
-	public Date DT; // Ê±¼ä
-	public String PATH;	//ÉÏ´«ÖĞ¼ÌÆ÷Â·¾¶
-	public int ID;// ³µÎ»Ì½²âÆ÷ID
-	public int X;// ´Å³¡XÖµ
-	public int Y;// ´Å³¡YÖµ
-	public int Z;// ´Å³¡ZÖµ
-	public int Q;// ĞÅºÅÖÊÁ¿
-	public int N;// ·¢ËÍ±àºÅ
-	public int D = -1;// ¾àÀëÖµ£¨cm£©£¬½ö¸´ºÏ³µÎ»Ì½²âÆ÷ÓĞ
-	public int V;// µç´ÅµçÑ¹
-	public int CV;// Íø¹Øµç´ÅµçÑ¹
-	public int GV;// ÖĞ¼ÌÆ÷µç´ÅµçÑ¹
-	public String GS;// ÖĞ¼ÌÆ÷×´Ì¬
+	public Date DT; // æ—¶é—´
+	public String PATH;	//ä¸Šä¼ ä¸­ç»§å™¨è·¯å¾„
+	public int ID;// è½¦ä½æ¢æµ‹å™¨ID
+	public int X;// ç£åœºXå€¼
+	public int Y;// ç£åœºYå€¼
+	public int Z;// ç£åœºZå€¼
+	public int Q;// ä¿¡å·è´¨é‡
+	public int N;// å‘é€ç¼–å·
+	public int D = -1;// è·ç¦»å€¼ï¼ˆcmï¼‰ï¼Œä»…å¤åˆè½¦ä½æ¢æµ‹å™¨æœ‰
+	public int V;// ç”µç£ç”µå‹
+	public int CV;// ç½‘å…³ç”µç£ç”µå‹
+	public int GV;// ä¸­ç»§å™¨ç”µç£ç”µå‹
+	public String GS;// ä¸­ç»§å™¨çŠ¶æ€
 
 	public String getID() {
 		return "TB" + ID;
@@ -56,8 +56,8 @@ public class CSensorValues {
 		if (d >= 0) {
 			int magLast = (int) Math.floor(Math.sqrt(Math.pow(X - X0, 2) + Math.pow(Y - Y0, 2) + Math.pow(Z - Z0, 2)));
 
-			int rate = BusyRateCalc.CalcProbability(mag, d); // ¼ÆËãÒ»°ãÓĞ³µ¸ÅÂÊ
-			int rateAmend = BusyRateCalc.CalcProbabilityAmend(magLast, mag, D, d, BusyRate, rate); // ¼ÆËã×ÛºÏÓĞ³µ¸ÅÂÊ
+			int rate = BusyRateCalc.CalcProbability(mag, d); // è®¡ç®—ä¸€èˆ¬æœ‰è½¦æ¦‚ç‡
+			int rateAmend = BusyRateCalc.CalcProbabilityAmend(magLast, mag, D, d, BusyRate, rate); // è®¡ç®—ç»¼åˆæœ‰è½¦æ¦‚ç‡
 
 			BusyRate = rateAmend;
 		} else {
@@ -73,8 +73,13 @@ public class CSensorValues {
 	}
 
 	public String getTimeString() {
-		java.text.DateFormat format = new java.text.SimpleDateFormat("yyyy£­MM£­dd HH:mm:ss");
-		return format.format(DT);
+		
+		Date now = new Date(); 
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");//å¯ä»¥æ–¹ä¾¿åœ°ä¿®æ”¹æ—¥æœŸæ ¼å¼
+		String datetime = dateFormat.format(now); 
+		return datetime;
+		//java.text.DateFormat format = new java.text.SimpleDateFormat("yyyyï¼MMï¼dd HH:mm:ss");
+		//return format.format(DT);
 	}
 
 	@Override
