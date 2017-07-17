@@ -1,4 +1,4 @@
-// The MIT License (MIT)
+﻿// The MIT License (MIT)
 // Copyright (C) 2016 by Lixiong <lx@cdtemplar.com>,http://www.cdtemplar.com
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,6 +21,7 @@
 
 package com.cdtemplar.parking_sensor;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class CSensorValues {
@@ -57,8 +58,8 @@ public class CSensorValues {
 			int magLast = (int) Math.floor(Math.sqrt(Math.pow(X - X0, 2) + Math.pow(Y - Y0, 2) + Math.pow(Z - Z0, 2)));
 
 			int rate = BusyRateCalc.CalcProbability(mag, d); // 计算一般有车概率
-			int rateAmend = BusyRateCalc.CalcProbabilityAmend(magLast, mag, D, d, BusyRate, rate); // 计算综合有车概率
-
+			//int rateAmend = BusyRateCalc.CalcProbabilityAmend(magLast, mag, D, d, BusyRate, rate); // 计算综合有车概率
+			int rateAmend = BusyRateCalc.CalcProbabilityAmend2(BusyRateCalc.IsDiffMag(X-x,Y-y,Z-z), D, d, BusyRate, rate); // 计算综合有车概率
 			BusyRate = rateAmend;
 		} else {
 			if (mag < 100)
