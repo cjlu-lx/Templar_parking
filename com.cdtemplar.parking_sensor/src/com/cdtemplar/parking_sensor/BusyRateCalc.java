@@ -36,8 +36,8 @@ public class BusyRateCalc {
 	static int[][] m_nssPointIR = {
 		{0, 99}, 			//0 ~ 99%
 	    {10, 99}, 
-	    {40, 90},
-	    {80, 10},
+	    {60, 90},
+	    {80, 55},
 	    {100, 1},				//100 ~ 1%	
 	    {110, 1}
 	};
@@ -90,24 +90,24 @@ public class BusyRateCalc {
 	
 	    if (nRateLast >= 500)   //原状态有车
 	    {
-	        if ( Math.abs(nMag - nMagLast) > 12 && nIR - nIRLast > 15)  //地磁变化，红外增加
+	        if ( Math.abs(nMag - nMagLast) > 12 && nIR - nIRLast > 10)  //地磁变化，红外增加
 	        {
-	        	nRate -= 100;
+	        	nRate -= 200;
 	        }
 	        else
 	        {
-	        	nRate += 100;
+	        	nRate += 200;
 	        }
 	    }
 	    else
 	    {
-	        if (Math.abs(nMag - nMagLast) > 12 && nIRLast - nIR > 15)  //地磁变化，红外减小
+	        if (Math.abs(nMag - nMagLast) > 12 && nIRLast - nIR > 10)  //地磁变化，红外减小
 	        {
-	        	nRate += 100;
+	        	nRate += 200;
 	        }
 	        else
 	        {
-	        	nRate -= 100;
+	        	nRate -= 200;
 	        }
 	    }
         if (nRate > 999)
