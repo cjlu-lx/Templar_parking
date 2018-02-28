@@ -73,6 +73,8 @@ public class BusyRateCalc {
 	public static int CalcProbability(int nMag, int nIR) {
 			if(nMag > 100)
 				return 900;
+			else if(nMag < 20)
+				return 100;
 	    int nMagL = ReadTable2Value(m_nssPointMag, nMag);
 	    int nIRL = ReadTable2Value(m_nssPointIR, nIR);
 	    int nn = nMagL * 55 + nIRL * 45;
